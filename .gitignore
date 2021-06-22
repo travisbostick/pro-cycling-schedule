@@ -1,0 +1,9 @@
+.DS_Store
+**/.DS_Store
+
+node_modules
+
+database/.env
+database/serviceAccountKey.json
+
+server/serviceAccountKey.js

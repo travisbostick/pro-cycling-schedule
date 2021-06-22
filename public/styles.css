@@ -1,0 +1,107 @@
+.card-body {
+  border: 0;
+  text-align: left;
+}
+
+.event {
+  margin-bottom: 1.5rem;
+}
+
+.stages {
+  margin-left: 3rem;
+}
+
+@media screen and (max-width: 500px) {
+  .stages {
+    margin-left: 0rem;
+  }
+}
+
+.addeventatc {
+  font-size: 3px;
+}
+
+.cal {
+  margin-right: -2rem;
+  padding-top: 1.1rem;
+}
+
+.week {
+  border: 1px solid black;
+  height: 100px;
+  padding: 0px;
+}
+
+.week0,
+.week1,
+.week2,
+.week3,
+.week4 {
+  border-bottom: none;
+}
+
+.day0,
+.day1,
+.day2,
+.day3,
+.day4,
+.day5 {
+  border-right: none;
+}
+
+.calEvent {
+  font-size: 0.8rem;
+  text-align: left;
+  background-color: rgb(69, 69, 160);
+  color: white;
+  border: none;
+  box-shadow: none;
+}
+
+.oneDay {
+  border-radius: 4px;
+  width: 95%;
+  margin-left: 2.5%;
+}
+
+.startDay {
+  width: 97.6%;
+  margin-left: 2.5%;
+  margin-right: -10px;
+  border-radius: 4px 0 0 4px;
+  white-space: nowrap !important;
+}
+
+.newLineEvent {
+  text-indent: 0% !important;
+}
+
+.middleDay {
+  text-indent: -9999px;
+  width: 100%;
+  white-space: nowrap !important;
+}
+
+.endDay {
+  width: 97.5%;
+  text-indent: -9999px;
+  margin-right: 2.5%;
+  border-radius: 0 4px 4px 0;
+  white-space: nowrap !important;
+}
+
+.hiddenDay {
+  visibility: hidden;
+}
+
+.today {
+  background-color: rgb(200, 196, 212);
+}
+
+.eventText {
+  text-overflow: ellipsis !important;
+}
+
+.row {
+  --bs-gutter-x: 0rem !important;
+}
