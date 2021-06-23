@@ -6,4 +6,4 @@ node_modules
 database/.env
 database/serviceAccountKey.json
 
-server/serviceAccountKey.js
+.env
