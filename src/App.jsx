@@ -11,7 +11,7 @@ function App() {
 
   useEffect(async () => {
     await axios
-      .get('/getEvents')
+      .get('./getEvents')
       .then(res => {
         setEvents(res.data);
       })
