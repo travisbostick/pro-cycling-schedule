@@ -7,7 +7,8 @@
   "homepage": "./",
   "proxy": "http://localhost:3001",
   "scripts": {
-    "start": "react-scripts start & nodemon server/index.js",
+    "start": "react-scripts start & node server/index.js",
+    "start:dev": "react-scripts start & nodemon server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
