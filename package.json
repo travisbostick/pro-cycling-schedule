@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "type": "module",
+  "homepage": "./",
   "proxy": "http://localhost:3001",
   "scripts": {
     "start": "react-scripts start & nodemon server/index.js",
