@@ -2,33 +2,29 @@
   "name": "pro-cycling-schedule",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "type": "module",
-  "homepage": "./",
-  "proxy": "http://localhost:3001",
   "scripts": {
-    "start": "react-scripts start & node server/index.js",
-    "start:dev": "react-scripts start & nodemon server/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cd client && npm run build",
+    "install-client": "cd client && npm install",
+    "heroku-postbuild": "npm run install-client && npm run build",
+    "start": "node server.js",
+    "client": "cd client && npm start",
+    "dev": "concurrently -n 'server,client' -c 'red,green'  \"nodemon server.js\" \"npm run client\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.21.1",
+    "concurrently": "^6.2.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "firebase-admin": "^9.5.0",
     "moment": "^2.29.1",
     "moment-timezone": "^0.5.33",
-    "react": "^17.0.1",
-    "react-bootstrap": "^1.5.1",
-    "react-dom": "^17.0.1",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "^4.0.3",
-    "semantic-ui-css": "^2.4.1",
-    "semantic-ui-react": "^2.0.3"
+    "path": "^0.12.7"
   },
   "browserslist": {
     "production": [
