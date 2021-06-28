@@ -3,6 +3,7 @@ import moment from 'moment';
 import Month from './Month';
 import 'semantic-ui-css/semantic.min.css';
 import { Container, Grid, Header } from 'semantic-ui-react';
+import Button from 'react-bootstrap/Button';
 
 function Calendar(props) {
   const [day, setDay] = useState(moment());
@@ -24,21 +25,38 @@ function Calendar(props) {
   return (
     <div>
       <Header>
+        <div className='stripe blue-stripe'></div>
+        <div className='stripe red-stripe'></div>
+        <div className='stripe black-stripe'></div>
+        <div className='stripe yellow-stripe'></div>
+        <div className='stripe green-stripe'></div>
         <Container className='pt-4'>
           <Grid columns={3}>
             <Grid.Column>
               <div style={{ textAlign: 'left' }}>
-                <button onClick={prevMonth}>prev</button>
+                <Button
+                  variant='light'
+                  onClick={prevMonth}
+                  className='month-nav'
+                >
+                  &lt;
+                </Button>
               </div>
             </Grid.Column>
             <Grid.Column>
-              <div style={{ textAlign: 'center' }}>
+              <div style={{ textAlign: 'center' }} className='month-name'>
                 <p>{month + ' ' + year}</p>
               </div>
             </Grid.Column>
             <Grid.Column>
               <div style={{ textAlign: 'right' }}>
-                <button onClick={nextMonth}>next</button>
+                <Button
+                  variant='light'
+                  onClick={nextMonth}
+                  className='month-nav'
+                >
+                  &gt;
+                </Button>
               </div>
             </Grid.Column>
           </Grid>

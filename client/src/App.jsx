@@ -23,12 +23,12 @@ function App() {
   return (
     <div className=''>
       <Header />
-      <Event />
+      {/* <Event /> */}
       <div className=''>
         {/* <Content /> */}
         <Calendar events={events} />
       </div>
-      <footer className='d-flex container justify-content-center text-muted mt-4 mb-4'>
+      <footer className='d-flex container justify-content-center text-muted mb-4'>
         <p>Created by Travis Bostick</p>
       </footer>
     </div>

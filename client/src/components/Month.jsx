@@ -21,7 +21,7 @@ function Month(props) {
       <Grid.Row>
         {weekDays.map((weekDay, i) => (
           <GridColumn key={i}>
-            <p>{weekDay}</p>
+            <p className='week-day'>{weekDay}</p>
           </GridColumn>
         ))}
       </Grid.Row>
