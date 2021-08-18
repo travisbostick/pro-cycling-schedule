@@ -9,6 +9,8 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
+    "@fullcalendar/daygrid": "^5.9.0",
+    "@fullcalendar/react": "^5.9.0",
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
     "moment": "^2.29.1",
