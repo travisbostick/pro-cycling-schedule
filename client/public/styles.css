@@ -5,17 +5,17 @@ html {
 }
 
 .fc-event-title {
-  font-size: 0.7rem;
+  font-size: 1rem;
   padding: 0 !important;
   padding-left: 1px !important;
 }
 
 .fc-event-title-container {
-  line-height: 1.2;
+  line-height: 1.52;
 }
 
 .stripe {
-  height: 0.55rem;
+  height: 0.7rem;
   opacity: 50%;
 }
 

@@ -36,14 +36,14 @@ function App() {
     <div>
       <div>
         <Stripes />
-        <div className='container'>
+        <div className='container calendar'>
           <FullCalendar
             plugins={[dayGridPlugin]}
             // headerToolbar={{
             //   center: 'title',
             //   right: 'prev,next today'
             // }}
-            height='auto'
+            height='55rem'
             initialView='dayGridMonth'
             events={events}
           />
