@@ -7,7 +7,7 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 function App() {
   const [events, setEvents] = useState([]);
 
-  const colors = ['#3788d8', '#7c36b5', '#2a964a', '#b87e2e'];
+  const colors = ['#337cc4', '#7c36b5', '#2e8743', '#ba3729'];
 
   useEffect(async () => {
     await axios
