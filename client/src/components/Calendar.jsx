@@ -1,22 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
-import data from '../events.json';
+import menEvents from '../data/menEvents.json';
+import womenEvents from '../data/womenEvents.json';
+import neutralEvents from '../data/neutralEvents.json';
 
 function Calendar(props) {
   const [menFilter, setMenFilter] = useState(true);
   const [womenFilter, setWomenFilter] = useState(true);
-  const [events, setEvents] = useState(
-    data.filter(
-      event =>
-        event.class.includes('UWT') ||
-        event.class.includes('CM') ||
-        (event.category == 'ME' && event.class.includes('Pro')) ||
-        event.class.includes('WWT') ||
-        event.class.includes('CM') ||
-        (event.category == 'WE' && event.class.includes('Pro'))
-    )
-  );
+  const [events, setEvents] = useState([
+    ...menEvents,
+    ...womenEvents,
+    ...neutralEvents
+  ]);
   const [hoverEvent, setHoverEvent] = useState(false);
   const [hoverDetails, setHoverDetails] = useState(false);
   const [eventDetails, setEventDetails] = useState({});
@@ -50,34 +46,12 @@ function Calendar(props) {
         singleDay: info.event._def.extendedProps.singleDay
       });
   }
-
-  function leaveEvent(info) {
-    setHoverEvent(false);
-  }
-
-  function enterDetails() {
-    setHoverDetails(true);
-  }
-
-  function leaveDetails() {
-    setHoverDetails(false);
-  }
-
   function filter(menFilter, womenFilter) {
-    setEvents(
-      data.filter(event => {
-        return (
-          (menFilter &&
-            (event.class.includes('UWT') ||
-              event.class.includes('CM') ||
-              (event.category == 'ME' && event.class.includes('Pro')))) ||
-          (womenFilter &&
-            (event.class.includes('WWT') ||
-              event.class.includes('CM') ||
-              (event.category == 'WE' && event.class.includes('Pro'))))
-        );
-      })
-    );
+    let allEvents = [];
+    menFilter && allEvents.push(...menEvents);
+    womenFilter && allEvents.push(...womenEvents);
+    (menFilter || womenFilter) && allEvents.push(...neutralEvents);
+    setEvents(allEvents);
   }
 
   const filters = {
@@ -127,7 +101,7 @@ function Calendar(props) {
         events={events}
         eventClick={click}
         eventMouseEnter={enterEvent}
-        eventMouseLeave={leaveEvent}
+        eventMouseLeave={() => setHoverEvent(false)}
         customButtons={filters}
       />
       <div
@@ -137,8 +111,8 @@ function Calendar(props) {
           top: `${eventDetails.y}px`,
           left: `${eventDetails.x}px`
         }}
-        onMouseEnter={enterDetails}
-        onMouseLeave={leaveDetails}
+        onMouseEnter={() => setHoverDetails(true)}
+        onMouseLeave={() => setHoverDetails(false)}
       >
         <p>{eventDetails.title}</p>
         {eventDetails.singleDay && <p>{eventDetails.end}</p>}
