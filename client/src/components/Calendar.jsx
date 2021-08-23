@@ -8,7 +8,10 @@ function Calendar(props) {
   const [womenFilter, setWomenFilter] = useState(false);
   const [events, setEvents] = useState(
     data.filter(
-      event => event.class.includes('UWT') || event.class.includes('CM')
+      event =>
+        event.class.includes('UWT') ||
+        event.class.includes('CM') ||
+        (event.category == 'ME' && event.class.includes('Pro'))
     )
   );
   const [hoverEvent, setHoverEvent] = useState(false);
@@ -62,9 +65,13 @@ function Calendar(props) {
       data.filter(event => {
         return (
           (menFilter &&
-            (event.class.includes('UWT') || event.class.includes('CM'))) ||
+            (event.class.includes('UWT') ||
+              event.class.includes('CM') ||
+              (event.category == 'ME' && event.class.includes('Pro')))) ||
           (womenFilter &&
-            (event.class.includes('WWT') || event.class.includes('CM')))
+            (event.class.includes('WWT') ||
+              event.class.includes('CM') ||
+              (event.category == 'WE' && event.class.includes('Pro'))))
         );
       })
     );
