@@ -5,13 +5,16 @@ import data from '../events.json';
 
 function Calendar(props) {
   const [menFilter, setMenFilter] = useState(true);
-  const [womenFilter, setWomenFilter] = useState(false);
+  const [womenFilter, setWomenFilter] = useState(true);
   const [events, setEvents] = useState(
     data.filter(
       event =>
         event.class.includes('UWT') ||
         event.class.includes('CM') ||
-        (event.category == 'ME' && event.class.includes('Pro'))
+        (event.category == 'ME' && event.class.includes('Pro')) ||
+        event.class.includes('WWT') ||
+        event.class.includes('CM') ||
+        (event.category == 'WE' && event.class.includes('Pro'))
     )
   );
   const [hoverEvent, setHoverEvent] = useState(false);
@@ -104,8 +107,9 @@ function Calendar(props) {
 
   useEffect(() => {
     let menFilterButton = document.querySelector('.fc-men-button');
-    let womenFilterButton = document.querySelector('.fc-men-button');
+    let womenFilterButton = document.querySelector('.fc-women-button');
     menFilter && menFilterButton.classList.add('fc-button-active');
+    womenFilter && womenFilterButton.classList.add('fc-button-active');
   }, []);
 
   return (
