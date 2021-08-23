@@ -40,7 +40,8 @@ function Calendar(props) {
           options
         ),
         class: info.event._def.extendedProps.class,
-        website: info.event._def.extendedProps.website
+        website: info.event._def.extendedProps.website,
+        singleDay: info.event._def.extendedProps.singleDay
       });
   }
 
@@ -129,9 +130,12 @@ function Calendar(props) {
         onMouseLeave={leaveDetails}
       >
         <p>{eventDetails.title}</p>
-        <p>
-          {eventDetails.start} - {eventDetails.end}
-        </p>
+        {eventDetails.singleDay && <p>{eventDetails.end}</p>}
+        {eventDetails.singleDay || (
+          <p>
+            {eventDetails.start} - {eventDetails.end}
+          </p>
+        )}
         <p>{eventDetails.class}</p>
         {eventDetails.website !== '' && (
           <a href={'//' + eventDetails.website} target='_blank'>
