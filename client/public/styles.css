@@ -4,6 +4,10 @@ html {
   height: 100%;
 }
 
+.card-title {
+  max-width: 12rem;
+}
+
 .card-body {
   padding: 5px;
 }

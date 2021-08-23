@@ -28,9 +28,10 @@ function Calendar(props) {
 
   function enterEvent(info) {
     setHoverEvent(true);
+    let maxX = window.innerWidth - 210;
     hoverDetails ||
       setEventDetails({
-        x: info.jsEvent.clientX - 10,
+        x: Math.min(info.jsEvent.clientX - 10, maxX),
         y: info.jsEvent.clientY - (info.jsEvent.offsetY - 22),
         title: info.event._def.title,
         start: info.event._instance.range.start.toLocaleDateString(
