@@ -4,6 +4,21 @@ html {
   height: 100%;
 }
 
+.fc-toolbar-title {
+  text-align: center !important;
+}
+
+.fc-toolbar-chunk {
+  text-align: center !important;
+}
+
+@media only screen and (max-width: 411px) {
+  .fc-today-button {
+    margin-left: 0 !important;
+    margin-top: 2px !important;
+  }
+}
+
 .fc-event-title {
   font-size: 1rem;
   padding: 0 !important;
