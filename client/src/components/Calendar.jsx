@@ -105,7 +105,7 @@ function Calendar(props) {
         customButtons={filters}
       />
       <div
-        className='hoverMenu'
+        className='hoverMenu card'
         style={{
           display: hoverEvent || hoverDetails || 'none',
           top: `${eventDetails.y}px`,
@@ -114,19 +114,27 @@ function Calendar(props) {
         onMouseEnter={() => setHoverDetails(true)}
         onMouseLeave={() => setHoverDetails(false)}
       >
-        <p>{eventDetails.title}</p>
-        {eventDetails.singleDay && <p>{eventDetails.end}</p>}
-        {eventDetails.singleDay || (
-          <p>
-            {eventDetails.start} - {eventDetails.end}
-          </p>
-        )}
-        <p>{eventDetails.class}</p>
-        {eventDetails.website !== '' && (
-          <a href={'//' + eventDetails.website} target='_blank'>
-            {eventDetails.website}
-          </a>
-        )}
+        <div className='card-body'>
+          <h5 className='card-title'>{eventDetails.title}</h5>
+          <div className='card-text'>
+            {eventDetails.singleDay && <p>{eventDetails.end}</p>}
+            {eventDetails.singleDay || (
+              <p>
+                {eventDetails.start} - {eventDetails.end}
+              </p>
+            )}
+            <p>{eventDetails.class}</p>
+          </div>
+          {eventDetails.website !== '' && (
+            <a
+              href={'//' + eventDetails.website}
+              className='card-link'
+              target='_blank'
+            >
+              {eventDetails.website}
+            </a>
+          )}
+        </div>
       </div>
     </div>
   );
