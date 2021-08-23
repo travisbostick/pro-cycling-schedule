@@ -12,10 +12,23 @@ html {
   text-align: center !important;
 }
 
-@media only screen and (max-width: 411px) {
+@media only screen and (max-width: 460px) {
   .fc-today-button {
+    display: none !important;
     margin-left: 0 !important;
     margin-top: 2px !important;
+  }
+  .fc-toolbar-title {
+    display: table-caption !important;
+    word-spacing: unset;
+    word-spacing: 9999rem;
+  }
+  .fc-prev-button {
+    margin-left: 26px !important;
+  }
+  .fc-next-button {
+    position: relative;
+    right: 0px;
   }
 }
 
