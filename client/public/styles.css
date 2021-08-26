@@ -24,6 +24,10 @@ footer {
   text-align: center !important;
 }
 
+.fc-button-active {
+  text-decoration: underline;
+}
+
 @media only screen and (max-width: 460px) {
   .fc-today-button {
     display: none !important;
