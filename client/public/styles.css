@@ -25,7 +25,7 @@ footer {
 }
 
 .fc-button-active {
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 
 @media only screen and (max-width: 460px) {
@@ -72,14 +72,6 @@ footer {
 .stripe {
   height: 0.7rem;
   opacity: 50%;
-}
-
-.blue-stripe {
-  background-color: rgb(60, 60, 175);
-}
-
-.red-stripe {
-  background-color: rgb(184, 0, 0);
 }
 
 .black-stripe {
