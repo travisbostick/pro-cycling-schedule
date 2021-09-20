@@ -104,6 +104,11 @@ function Calendar(props) {
         eventMouseEnter={enterEvent}
         eventMouseLeave={() => setHoverEvent(false)}
         customButtons={filters}
+        titleFormat={
+          window.screen.width < 400
+            ? { month: 'short', year: 'numeric' }
+            : { month: 'long', year: 'numeric' }
+        }
       />
       <div
         className='hoverMenu card'
