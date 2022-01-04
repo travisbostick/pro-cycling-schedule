@@ -74,6 +74,14 @@ footer {
   opacity: 50%;
 }
 
+.blue-stripe {
+  background-color: blue;
+}
+
+.red-stripe {
+  background-color: red;
+}
+
 .black-stripe {
   background-color: black;
 }
